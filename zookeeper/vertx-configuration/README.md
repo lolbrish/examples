@@ -69,8 +69,13 @@ _You can now monitor the app in your terminal and use localhost:8080,
 localhost:8081, and localhost:8082 to see the three webservers serve the latest
 configuration._
 
+__The Terminal:__
 ![terminal](./docs/terminal.png)
+__The Browser Result:__
 ![browser](./docs/browser.png)
 
 _Pressing ctrl-c will should stop docker-compose but I would also recommend
 using docker-compose down before calling docker-compose a second time._
+
+_You can also test Zookeeper a bit by killing some of the zookeeper containers
+and seeing how the app responds._
