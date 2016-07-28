@@ -1,0 +1,148 @@
+# https://docs.docker.com/compose/compose-file/
+
+version: '2'
+
+services:
+  zookeeper1:
+    build:
+      dockerfile: Dockerfile.zookeeper
+      context: .
+      args:
+        myid: 1
+    networks:
+      - back
+  zookeeper2:
+    build:
+      dockerfile: Dockerfile.zookeeper
+      context: .
+      args:
+        myid: 2
+    networks:
+      - back
+  zookeeper3:
+    build:
+      dockerfile: Dockerfile.zookeeper
+      context: .
+      args:
+        myid: 3
+    networks:
+      - back
+  zookeeper4:
+    build:
+      dockerfile: Dockerfile.zookeeper
+      context: .
+      args:
+        myid: 4
+    networks:
+      - back
+  zookeeper5:
+    build:
+      dockerfile: Dockerfile.zookeeper
+      context: .
+      args:
+        myid: 5
+    networks:
+      - back
+  vertx8080:
+    image: java:8-jdk
+    entrypoint:
+      - java
+      - -jar
+      - zookeeper-vertx-example-0.0.1-fat.jar
+    volumes:
+      - ./target:/code
+    working_dir: /code
+    links:
+      - zookeeper1
+      - zookeeper2
+      - zookeeper3
+      - zookeeper4
+      - zookeeper5
+    depends_on:
+      - zookeeper1
+      - zookeeper2
+      - zookeeper3
+      - zookeeper4
+      - zookeeper5
+    ports:
+      - "127.0.0.1:8080:8080"
+    networks:
+      - back
+  vertx8081:
+    image: java:8-jdk
+    entrypoint:
+      - java
+      - -jar
+      - zookeeper-vertx-example-0.0.1-fat.jar
+    volumes:
+      - ./target:/code
+    working_dir: /code
+    links:
+      - zookeeper1
+      - zookeeper2
+      - zookeeper3
+      - zookeeper4
+      - zookeeper5
+    depends_on:
+      - zookeeper1
+      - zookeeper2
+      - zookeeper3
+      - zookeeper4
+      - zookeeper5
+    ports:
+      - "127.0.0.1:8081:8080"
+    networks:
+      - back
+  vertx8082:
+    image: java:8-jdk
+    entrypoint:
+      - java
+      - -jar
+      - zookeeper-vertx-example-0.0.1-fat.jar
+    volumes:
+      - ./target:/code
+    working_dir: /code
+    links:
+      - zookeeper1
+      - zookeeper2
+      - zookeeper3
+      - zookeeper4
+      - zookeeper5
+    depends_on:
+      - zookeeper1
+      - zookeeper2
+      - zookeeper3
+      - zookeeper4
+      - zookeeper5
+    ports:
+      - "127.0.0.1:8082:8080"
+    networks:
+      - back
+  configuration_generator:
+    image: java:8-jdk
+    entrypoint:
+      - java
+      - -cp
+      - zookeeper-vertx-example-0.0.1-fat.jar
+      - com.lukeolbrish.example.ConfigurationGenerator
+    volumes:
+      - ./target:/code
+    working_dir: /code
+    links:
+      - zookeeper1
+      - zookeeper2
+      - zookeeper3
+      - zookeeper4
+      - zookeeper5
+    depends_on:
+      - zookeeper1
+      - zookeeper2
+      - zookeeper3
+      - zookeeper4
+      - zookeeper5
+    networks:
+      - back
+
+networks:
+  back:
+    driver: bridge
