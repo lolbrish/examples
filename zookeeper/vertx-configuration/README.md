@@ -10,6 +10,11 @@ zookeeper-entrypoint.sh files to be useful in other projects where you want to
 quickly setup a Zookeeper service as the instructions for many of the docker
 images for Zookeeper are not very robust._
 
+## Table of contents
+
+  * [Building](#building)
+  * [Running and Screenshots](#running-and-screenshots)
+
 ## Files
 
 __src/com/lukeolbrish/example:__
@@ -54,11 +59,18 @@ docker run -it \
 6. set the working directory in the container to the current directory outside the container
 7. Use a maven jdk-8 image and run maven to package a jar.
 
-## Running
+## Running and Screenshots
 
 ```shell
 docker-compose up
 ```
+
+_You can now monitor the app in your terminal and use localhost:8080,
+localhost:8081, and localhost:8082 to see the three webservers serve the latest
+configuration._
+
+![terminal](./docs/terminal.png)
+![browser](./docs/browser.png)
 
 _Pressing ctrl-c will should stop docker-compose but I would also recommend
 using docker-compose down before calling docker-compose a second time._
