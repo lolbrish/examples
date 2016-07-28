@@ -70,8 +70,11 @@ localhost:8081, and localhost:8082 to see the three webservers serve the latest
 configuration._
 
 __The Terminal:__
+
 ![terminal](./docs/terminal.png)
+
 __The Browser Result:__
+
 ![browser](./docs/browser.png)
 
 _Pressing ctrl-c will should stop docker-compose but I would also recommend
