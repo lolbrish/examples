@@ -69,6 +69,12 @@ _You can now monitor the app in your terminal and use localhost:8080,
 localhost:8081, and localhost:8082 to see the three webservers serve the latest
 configuration._
 
+_You can also run zkcli on another terminal:_
+
+```shell
+docker-compose run --rm zkcli -server zookeeper3
+```
+
 __The Terminal:__
 
 ![terminal](./docs/terminal.png)

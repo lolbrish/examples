@@ -43,6 +43,14 @@ services:
         myid: 5
     networks:
       - back
+  zkcli:
+    build:
+      dockerfile: Dockerfile.zkcli
+      context: .
+    stdin_open: true
+    tty: true
+    networks:
+      - back
   vertx8080:
     image: java:8-jdk
     entrypoint:
@@ -52,12 +60,6 @@ services:
     volumes:
       - ./target:/code
     working_dir: /code
-    links:
-      - zookeeper1
-      - zookeeper2
-      - zookeeper3
-      - zookeeper4
-      - zookeeper5
     depends_on:
       - zookeeper1
       - zookeeper2
