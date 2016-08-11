@@ -7,9 +7,6 @@ _This is a simple example that sets up a five server Zookeeper cluster._
 This example requires [docker version 1.11+](https://www.docker.com/) and
 [docker-compose version 1.6+](https://docs.docker.com/compose/).
 
-The directory is already set up for eclipse neon if you "Open Projects From
-Filesystem..."
-
 ## Running
 
 ```shell
