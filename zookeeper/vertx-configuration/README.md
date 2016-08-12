@@ -81,7 +81,7 @@ _You can now monitor the app in your terminal and use docker-machine-ip:8080,
 docker-machine-ip:8081, and docker-machine-ip:8082 to see the three webservers
 serve the latest configuration._
 
-_You can also run zkcli on another terminal:_
+__running zkcli__
 
 ```shell
 docker-compose run --rm zkcli -server zookeeper3
