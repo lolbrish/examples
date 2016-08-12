@@ -67,8 +67,8 @@ docker-compose up
 
 __Linux__
 
-_You can now monitor the app in your terminal and use 127.0.0.0:8080,
-127.0.0.0:8081, and 127.0.0.0:8082 to see the three webservers serve the latest
+_You can now monitor the app in your terminal and use 127.0.0.1:8080,
+127.0.0.1:8081, and 127.0.0.1:8082 to see the three webservers serve the latest
 configuration._
 
 __Other Operating Systems__
