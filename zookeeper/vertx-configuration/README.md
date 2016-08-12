@@ -65,9 +65,21 @@ docker run -it \
 docker-compose up
 ```
 
-_You can now monitor the app in your terminal and use localhost:8080,
-localhost:8081, and localhost:8082 to see the three webservers serve the latest
+__Linux__
+
+_You can now monitor the app in your terminal and use 127.0.0.0:8080,
+127.0.0.0:8081, and 127.0.0.0:8082 to see the three webservers serve the latest
 configuration._
+
+__Other Operating Systems__
+
+```shell
+docker-machine ip
+```
+
+_You can now monitor the app in your terminal and use docker-machine-ip:8080,
+docker-machine-ip:8081, and docker-machine-ip:8082 to see the three webservers
+serve the latest configuration._
 
 _You can also run zkcli on another terminal:_
 

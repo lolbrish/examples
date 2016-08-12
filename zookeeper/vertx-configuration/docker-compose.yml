@@ -67,7 +67,7 @@ services:
       - zookeeper4
       - zookeeper5
     ports:
-      - "127.0.0.1:8080:8080"
+      - "0.0.0.0:8080:8080"
     networks:
       - back
   vertx8081:
@@ -92,7 +92,7 @@ services:
       - zookeeper4
       - zookeeper5
     ports:
-      - "127.0.0.1:8081:8080"
+      - "0.0.0.0:8081:8080"
     networks:
       - back
   vertx8082:
@@ -117,7 +117,7 @@ services:
       - zookeeper4
       - zookeeper5
     ports:
-      - "127.0.0.1:8082:8080"
+      - "0.0.0.0:8082:8080"
     networks:
       - back
   configuration_generator:
