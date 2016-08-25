@@ -7,4 +7,4 @@ ARG myid
 COPY zoo.cfg /opt/zookeeper/conf/zoo.cfg
 COPY zookeeper-entrypoint.sh /opt/zookeeper/bin/zookeeper-entrypoint.sh
 ENV MYID=$myid
-ENTRYPOINT ["bash", "-x", "/opt/zookeeper/bin/zookeeper-entrypoint.sh"]
+ENTRYPOINT ["bash", "/opt/zookeeper/bin/zookeeper-entrypoint.sh"]
